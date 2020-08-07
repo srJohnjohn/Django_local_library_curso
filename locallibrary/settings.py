@@ -134,3 +134,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
+
+ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
