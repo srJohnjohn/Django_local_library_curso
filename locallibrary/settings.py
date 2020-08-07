@@ -25,8 +25,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 DEBUG = False
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = ['secure-oasis-12895.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -134,5 +134,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
-
-ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1']
