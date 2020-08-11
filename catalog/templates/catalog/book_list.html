@@ -3,13 +3,15 @@
 {% block content %}
   <h1>Book List</h1>
   {% if book_list %}
-  <ul>
+  <table>
     {% for book in book_list %}
-      <li>
-        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
-      </li>
+      <tr>
+        <th><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})</th>
+        <th><a href="book/{{book.id}}/update" class="btn btn-warning" id = '{{book.id}}'>edit</a></th>
+        <th><a href="book/{{book.id}}/delete" class="btn btn-danger" id = '{{book.id}}'>delete</a></th>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
   {% else %}
     <p>There are no books in the library.</p>
   {% endif %}       

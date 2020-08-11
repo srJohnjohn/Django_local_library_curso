@@ -126,15 +126,19 @@ def renew_book_librarian(request, pk):
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Author
+from django.views.generic.edit import CreateView
 
 
-class AuthorCreate(PermissionRequiredMixin, CreateView):
+class AuthorCreate(CreateView):
+    model = Author
+    fields = ['first_name']
+
+"""class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = '__all__'
     initial = {'date_of_death': '05/01/2018'}
     permission_required = 'catalog.can_mark_returned'
-
+"""
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     model = Author
@@ -158,6 +162,7 @@ class BookCreate(PermissionRequiredMixin, CreateView):
 class BookUpdate(PermissionRequiredMixin, UpdateView):
     model = Book
     fields = '__all__'
+    template_name_suffix = '_update_form'
     permission_required = 'catalog.can_mark_returned'
 
 
