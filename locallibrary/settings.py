@@ -28,7 +28,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 
 ALLOWED_HOSTS = ['secure-oasis-12895.herokuapp.com', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
