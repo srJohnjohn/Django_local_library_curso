@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>Book List</h1>
+  <a href="{% url 'book_create' %}">Criar livro</a>
   {% if book_list %}
   <table>
     {% for book in book_list %}
