@@ -49,7 +49,6 @@ class AuthorListView(generic.ListView):
 
 
 class AuthorDetailView(generic.DetailView):
-    """Generic class-based detail view for an author."""
     model = Author
 
 
@@ -129,20 +128,16 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 
 
-class AuthorCreate(CreateView):
-    model = Author
-    fields = ['first_name']
-
-"""class AuthorCreate(PermissionRequiredMixin, CreateView):
+class AuthorCreate(PermissionRequiredMixin, CreateView):
     model = Author
     fields = '__all__'
-    initial = {'date_of_death': '05/01/2018'}
     permission_required = 'catalog.can_mark_returned'
-"""
+#    initial = {'date_of_death': '05/01/2018'}
+
 
 class AuthorUpdate(PermissionRequiredMixin, UpdateView):
     model = Author
-    fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+    fields = '__all__'
     permission_required = 'catalog.can_mark_returned'
 
 
